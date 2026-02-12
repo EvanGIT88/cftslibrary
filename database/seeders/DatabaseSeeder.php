@@ -21,10 +21,10 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         User::factory(20)->has(Siswa::factory()->count(1))->create();
         Buku::factory(20)->create();
-        PinjamanBuku::factory(20)
-        ->has(Siswa::factory()->count(1))
-        ->has(Buku::factory()->count(1))
-        ->create();
-
+        for ($x = 1; $x >= 20; $x++) {
+           PinjamanBuku::factory()->make([
+            'id' => $x,
+           ]);
+        }
     }
 }

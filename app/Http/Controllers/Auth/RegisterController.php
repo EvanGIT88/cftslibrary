@@ -7,7 +7,6 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use App\Enums\Peran;
 
 class RegisterController extends Controller
 {
@@ -47,14 +46,6 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-
-    /*
-            $table->foreignId('id_user')->constrained('users')->onDelete('CASCADE');
-            $table->integer("nis")->unique();
-            $table->string("kelas");
-            $table->string("jurusan");
-            $table->string("nama_lengkap");
-    */
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -63,7 +54,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-
 
     /**
      * Create a new user instance after a valid registration.
@@ -77,7 +67,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'peran' => Peran::SISWA
         ]);
     }
 }

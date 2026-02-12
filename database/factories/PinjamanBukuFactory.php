@@ -29,8 +29,8 @@ class PinjamanBukuFactory extends Factory
         $tanggalPinjam = Carbon::yesterday();
         return [
             //
-            "id_siswas" => Siswa::factory(),
-            "id_bukus" => Buku::factory(),
+            "siswa_id" => Siswa::factory(),
+            "buku_id" => Buku::factory(),
             "tanggal_pinjam"=> $tanggalPinjam,
             "tanggal_kembali" => $tanggalPinjam->subHours(3)
         ];

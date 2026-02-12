@@ -18,17 +18,17 @@ class PinjamanBuku extends Model
             $table->date("tanggal_kembali");
     */
     protected $fillable = [
-        'id_siswas',
-        'id_bukus',
+        'siswa_id',
+        'buku_id',
         'tanggal_pinjam',
         'tanggal_kembali'
     ];
 
-    public function siswa() {
-        return $this->hasMany(Siswa::class, "siswas");
+        public function buku() {
+        return $this->hasMany(Buku::class, "id");
     }
 
-    public function buku() {
-        return $this->hasMany(Buku::class, "bukus");
+        public function siswa() {
+        return $this->hasMany(Siswa::class, "id");
     }
 }

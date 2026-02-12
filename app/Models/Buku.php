@@ -16,4 +16,8 @@ class Buku extends Model
         'penerbit',
         'tahun'
     ];
+
+    protected $casts = [
+        "tahun" => "datetime:Y"
+    ];
 }

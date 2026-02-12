@@ -36,8 +36,8 @@ class SiswaFactory extends Factory
     {
         return [
             //
-            "id_user" => User::factory(),
-            "nis" => rand(1,13),
+            "user_id" => User::factory(),
+            "nis" => rand(1111111111111,9999999999999),
             "kelas" => Kelas::DUABELAS,
             "jurusan" => Jurusan::PPLG,
             "nama_lengkap" => fake()->name(),

@@ -36,7 +36,7 @@ class BukuFactory extends Factory
              'judul' => Str::random(),
              'pengarang' => fake()->name(),
              'penerbit' => fake()->name(),
-             'tahun' => Carbon::now()->isoFormat('YYYY')
+             'tahun' => Carbon::now(),
         ];
     }
 }
